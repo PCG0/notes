@@ -7,7 +7,7 @@
 #include <cstring>
 using namespace std;
 
-
+char inputCode[32];
 
 int main()
 {
@@ -23,7 +23,7 @@ null
 	//scanf("%d",&inputCode);
 	cout << ">>";
 	cin >> inputCode;
-
+	
 
 	system("pause");
 }
