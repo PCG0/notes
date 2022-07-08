@@ -177,22 +177,9 @@ public:
     }
 };
 
-// 瞎猫碰死耗子
-int Person::aa = 10;
-
-// 可扩展的一个数组，它的底层就是数组
-vector<int> v;
-
-// 主程序
-int main(int argc, char const *argv[])
+void Strh()
 {
-    // 定义宏，上传到洛谷等大多数 Online Judge 时忽略该宏
-    #ifndef ONLINE_JUDGE
-        // 重定向。将输出存入 .out 文件中
-        freopen("C++\\cppDemo.out","w",stdout);
-    #endif
-
-// C 字符串
+    // C 字符串
 
     // 这是一个字符串
     // 末尾的 \0 是结束标识符，属于代码规范，必写
@@ -218,8 +205,11 @@ int main(int argc, char const *argv[])
     // strcmp();    以字典排序方式比较字符串大小
     // strcpy();    拷贝
     // strcat();    追加
+}
 
-// C++ 字符串
+void CppStr()
+{
+    // C++ 字符串
 
     // C++ 字符串是一个新的类型：string
     // string 是特殊的数据结构，是 STL 容器中的一员
@@ -281,6 +271,53 @@ int main(int argc, char const *argv[])
     // string 是没法直接转为字符数组的，只能转为 const char[]
     char* w = (char*)www.c_str();
     cout<<w<<endl;
+}
+
+void Sstream()
+{
+    // 建立一个字符串的输入流
+    string src("hello 123 4.5 T");
+    istringstream is(src);
+
+    string s1;
+    int a;
+    double b;
+    char c;
+
+    is>>s1>>a>>b>>c;
+    
+    cout<<s1<<endl
+        <<a<<endl;
+
+    // 输出流
+    ostringstream os;
+    os<<s1<<"哈哈"<<a<<" "<<b<<" "<<c<<endl;
+    cout<<os.str()<<endl;
+}
+
+// 瞎猫碰死耗子
+int Person::aa = 10;
+
+// 可扩展的一个数组，它的底层就是数组
+vector<int> v;
+
+// 主程序
+int main(int argc, char const *argv[])
+{
+    // 定义宏，上传到洛谷等大多数 Online Judge 时忽略该宏
+    #ifndef ONLINE_JUDGE
+        // 重定向。将输出存入 .out 文件中
+        freopen("C++\\cppDemo.out","w",stdout);
+    #endif
+
+// C 字符串
+    Strh();
+
+// C++ 字符串
+    CppStr();
+
+// string stream 字符串流
+    Sstream();
 
 // 函数、类、static
 
