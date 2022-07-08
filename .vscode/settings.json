@@ -229,7 +229,7 @@
 	"editor.folding": true,
 
 	// 控制编辑器是否应突出显示折叠范围。
-	"editor.foldingHighlight": true,
+	"editor.foldingHighlight": false,
 
 	// 控制编辑器是否自动折叠导入范围。
 	"editor.foldingImportsByDefault": false,
@@ -1208,7 +1208,7 @@
 	"workbench.localHistory.mergeWindow": 10,
 
 	// 控制新工作区中面板(终端、调试控制台、输出、问题)的默认位置。它可以显示在编辑器区域的底部、右侧或左侧。
-	"workbench.panel.defaultLocation": "bottom",
+	"workbench.panel.defaultLocation": "right",
 
 	// 控制面板是否以最大化方式打开。它可以始终以最大化方式打开、永不以最大化方式打开或以关闭前的最后一个状态打开。
 	//  - always: 始终以最大化方式打开面板。
@@ -3458,7 +3458,7 @@
 	"terminal.integrated.cursorBlinking": false,
 
 	// 控制终端光标的样式。
-	"terminal.integrated.cursorStyle": "block",
+	"terminal.integrated.cursorStyle": "line",
 
 	// 控制在 "#terminal.integrated.cursorStyle#" 设置为 "line" 时光标的宽度。
 	"terminal.integrated.cursorWidth": 1,
