@@ -22,7 +22,7 @@ int comments_number, conments_allnum,
 
 int main(int argc, char const *argv[])
 {
-	SetConsoleOutputCP(65001);
+	// SetConsoleOutputCP(65001);
 	cout<<"今天要PO些什么呢？\n\n";
 	cin>>text;
 	cout<<endl;
@@ -38,7 +38,7 @@ int main(int argc, char const *argv[])
 			cout<<char (cookie_ID_capital)<<char (cookie_ID_lowercase);
 		}
 		comments_number = rand()%(i+rand()%25);//生成随机数 
-		cout<<"	    	>>No."<<post_number<<endl<<"   "<<comments[comments_number]<<endl<<endl;
+		cout<<" || >>No."<<post_number<<endl<<"   "<<comments[comments_number]<<endl<<endl;
 	}
 	return 0;
 }

@@ -1,4 +1,7 @@
 {
+
+	
+
 	// 控制是否在编辑器中显示 CodeLens。
 	"diffEditor.codeLens": false,
 
@@ -950,7 +953,7 @@
 	"workbench.colorCustomizations": {},
 
 	// 指定用在工作台中的颜色主题。
-	"workbench.colorTheme": "Default Dark+",
+	"workbench.colorTheme": "Community Material Theme Darker",
 
 	// 控制命令面板中保留最近使用命令的数量。设置为 0 时禁用命令历史功能。
 	"workbench.commandPalette.history": 50,
@@ -1152,7 +1155,7 @@
 	//  - eq-material-theme-icons-ocean
 	//  - eq-material-theme-icons-light
 	//  - vscode-icons
-	"workbench.iconTheme": "vs-seti",
+	"workbench.iconTheme": "vscode-icons",
 
 	// 控制是否通过 `window.titleBarStyle` 启用自定义标题栏中的布局控件。
 	"workbench.layoutControl.enabled": true,
@@ -1281,7 +1284,7 @@
 	//  - readme: 当打开包含自述文件的文件夹时，请打开自述文件，否则会回退到 'welcomePage'。请注意: 仅在作为全局 配置时才遵守此操作，如果在工作区或文件夹配置中进行设置，则此将被忽略。
 	//  - newUntitledFile: 打开一个新的无标题文件(仅在打开一个空窗口时适用)。
 	//  - welcomePageInEmptyWorkbench: 在打开空工作区时打开欢迎页面。
-	"workbench.startupEditor": "welcomePage",
+	"workbench.startupEditor": "none",
 
 	// 控制工作台底部状态栏的可见性。
 	"workbench.statusBar.visible": true,
@@ -4276,6 +4279,7 @@
 		"editor.unicodeHighlight.ambiguousCharacters": false,
 		"editor.unicodeHighlight.invisibleCharacters": false,
 		"editor.wordWrap": "on",
+		"editor.defaultFormatter": "yzhang.markdown-all-in-one",
 		// "editor.quickSuggestions": false
 	},
 
@@ -7151,5 +7155,18 @@
 
 	// [Warn Type:5], 是否开启table定义中含有重复的key
 	"luahelper.Warn.CheckTableDuplicateKey": true,
+
+	// markdown settings
+    // "[markdown]": {
+    //     "editor.formatOnSave": true,
+    //     "editor.renderWhitespace": "all",
+    //     "editor.quickSuggestions": {
+    //         "other": "on",
+    //         "comments": "on",
+    //         "strings": "on"
+    //     },
+    //     "editor.acceptSuggestionOnEnter": "on",
+    //     "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    // },
 
 }

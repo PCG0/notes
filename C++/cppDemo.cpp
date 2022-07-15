@@ -15,6 +15,11 @@ namespace mySpace
     int b;
 }
 
+namespace tempc
+{
+    int a,b;
+}
+
 // 这是一个人类
 class Person
 {
@@ -158,10 +163,7 @@ int* getArr()
 // 声明一个 T 这样的通用类型（泛型）
 // 如何使用？放到函数的上面就可以了
 template<class T>
-bool maxA(T a, T b)
-{
-    return a > b;
-}
+bool maxA(T a, T b){return a > b;}
 
 // 也可以对函数定义一个泛型：
 template<class C>
@@ -207,9 +209,23 @@ void Strh()
     // strcat();    追加
 }
 
-void CppStr()
+void CppStr()// C++ 字符串
 {
-    // C++ 字符串
+    // 有一个类型的题目是找到输出图形的规律，然后将其实现。
+    // 观察下面的图形。你想想该如何输出呢？
+    //  A
+    // BBB
+    cout<<" A"<<endl
+        <<"BBB"<<endl;
+    // 那么对于：
+    //   A
+    //  BBB
+    // CCCCC
+    // 同理：
+    cout<<"  A"<<endl
+        <<" BBB"<<endl
+        <<"CCCCC"<<endl;
+
 
     // C++ 字符串是一个新的类型：string
     // string 是特殊的数据结构，是 STL 容器中的一员
@@ -300,11 +316,33 @@ int Person::aa = 10;
 
 // 可扩展的一个数组，它的底层就是数组
 vector<int> v;
+// map 的实现原理是 红黑树
+// 它必须要提供两个类型,因为它是"大名鼎鼎"的键值对结构
+// 有一种数据形式非常受欢迎,而且很符合人的逻辑思维
+// 叫做 键值对
+// 例如 json 数据传输和反馈, json 就是键值对形式
+// arr[0] = val 下标 == key
+// map 可以自定义 key 的类型
+// 还有一个 unordered_map,无序的 map,查找效率要比 map 更加的高
+// 原理是 哈希表
+map<string,int> m;
+
+// 指针是否能作为函数的返回值？
+// 可以的
+// 这个操作叫：传址
+void f(int *a,int *b)// 用指针来找到内存单元实现交换
+{
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+    // 实参和形参的内存地址是一样的
+    // 那么我们就可以根据一样的内存地址找到同一个内存空间
+}
 
 // 主程序
 int main(int argc, char const *argv[])
 {
-    // 定义宏，上传到洛谷等大多数 Online Judge 时忽略该宏
+    // 宏定义，上传到洛谷等大多数 Online Judge 时忽略该宏
     #ifndef ONLINE_JUDGE
         // 重定向。将输出存入 .out 文件中
         freopen("C++\\cppDemo.out","w",stdout);
@@ -320,7 +358,6 @@ int main(int argc, char const *argv[])
     Sstream();
 
 // 函数、类、static
-
     int a = 20;
     mySpace::a = 10;
     // 就近原则
@@ -382,7 +419,7 @@ int main(int argc, char const *argv[])
     int* arr = new int[100005];
     // 因为 new 是不会自己释放的，所以我们后边要用 delete 释放它
     // 面对数组，要用 delete[]
-    delete[] arr;
+    delete[] arr;// 这里已经释放掉了,没输出而已
 
 // 指针
     // 指针是一种特殊的复合类型
@@ -402,6 +439,15 @@ int main(int argc, char const *argv[])
     // int* p = 阳光变量的内存地;
     // *p = 500;
     // 那么阳光的值就会变成 500！
+    cout<<(*p).age<<endl
+        <<p->age<<endl;
+    int ta{100};
+    int* lp = &ta;
+    cout<<lp<<endl
+        <<&ta<<endl
+        <<&lp<<endl
+        <<*lp<<endl // 解引用
+    ;
 
     // 数组是不是一个连续的内存空间？
     int* getarr = getArr();
@@ -444,7 +490,7 @@ int main(int argc, char const *argv[])
         cout<<v[i]<<endl;
     // 显然，向上面那样写太过于麻烦了，我们可以用 for each 来偷工减料：
     // for each 要遍历的东西必须是列表或容器
-    for(int i:v) //或 for(auto i:v)
+    for(int i:v)
         cout<<i<<endl;
 
     // 迭代器：就是一个内存地址，用来找容器里面的元素的
@@ -461,6 +507,7 @@ int main(int argc, char const *argv[])
     // 通过下标偏移的方式来计算，实现“伪连续”
 
     // 这样写存储迭代器的变量：
+    // vector<int>::iterator l = v.begin();
     vector<int>::iterator l = v.begin();
     // 解引用头迭代器试试：
     cout<<*l<<endl;
@@ -471,12 +518,37 @@ int main(int argc, char const *argv[])
     v.insert(v.begin()+1,5);
     for(auto x:v)
         cout<<x<<endl;
-
-
     // 容器.clear()     清空
     v.clear();
     // 此时再输出容器长度的话，就为0
     cout<<v.size()<<endl;
+
+// map
+    m["哈哈"] = 50;
+    cout<<m["哈哈"]<<endl;
+    // 可以发现,是可以输出的,这就牛逼了
+    // 如果调用一个键,且该键在容器内不存在,则自动创建该键
+    // 何以见得?
+    // 证明:
+    map<string,int> test;           // 首先创建一个新 map 容器
+    cout<<test.size()<<endl;        // 0
+    cout<<test["不存在的键"]<<endl;  // 0
+    cout<<test.size()<<endl;        // 1
+    // 证毕 Q.E.D
+
+    // 插入键:
+    m.insert(make_pair("草",20));
+    cout<<m["草"]<<endl;
+
+    // 验证一个键是否存在:
+    cout<<m.count("草")<<endl;          // 1
+    cout<<m.count("不存在的键")<<endl;  // 0
+    
+    tempc::a = 10;
+    tempc::b = 20;
+
+    f(&tempc::a,&tempc::b);
+    cout<<tempc::a<<" || "<<tempc::b<<endl;
 
     return 0;
 }

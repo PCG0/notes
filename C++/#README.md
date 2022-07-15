@@ -7,15 +7,18 @@
 #include <cstring>
 #include <cmath>
 
-#include <windows.h>
+
 #include <time.h>
 #include <bits/stdc++.h>
 
 
-system("pause")
+
 sqrt()
 pow()
-SetConsoleOutputCP(65001) // 中文显示支持
+
+#include <windows.h>
+system("pause");
+SetConsoleOutputCP(65001); // 中文显示支持
 
 ios::sync_with_stdio(false); 以关闭同步的方式加快cin的读入速度
 ```

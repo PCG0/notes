@@ -1,6 +1,11 @@
 abc
 Hello world
 c
+ A
+BBB
+  A
+ BBB
+CCCCC
 hello world
 aaaaa
 three
@@ -27,6 +32,12 @@ Resu正在吃饭
 10
 human
 human 被杀死了，原因不明
+10
+10
+0xc7b4fff66c
+0xc7b4fff66c
+0xc7b4fff660
+100
 0
 1
 2
@@ -53,4 +64,12 @@ Resu
 2
 3
 0
+50
+0
+0
+1
+20
+1
+0
+20 || 10
 我是以变量的方式直接声明的，直接实例化的对象 被杀死了，原因不明

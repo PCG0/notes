@@ -6,7 +6,7 @@ SYSTEMTIME sys;
 int main(int argc, char const *argv[])
 {
 	SetConsoleOutputCP(65001);
-	while (true)
+	while(true)
 	{
 		// 输出时间
 		GetLocalTime(&sys);
